@@ -4,10 +4,9 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
-/**
- * Используется сервисом IPSP провайдера в качестве параметра запроса на выполнение операции
- *
- */
+
+ // Используется сервисом IPSP провайдера в качестве параметра запроса на выполнение операции
+
 @Getter
 public class TransactionAuthorizationRequest {
     long cardFromNumber;

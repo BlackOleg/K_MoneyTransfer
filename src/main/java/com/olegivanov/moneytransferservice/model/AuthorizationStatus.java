@@ -1,9 +1,6 @@
 package com.olegivanov.moneytransferservice.model;
 
-/**
- * Класс для получения результата операции от IPSP сервиса
- *
- */
+
 public enum AuthorizationStatus {
     AUTHORIZED(value = 1),
     UNAUTHORIZED(value = 2),

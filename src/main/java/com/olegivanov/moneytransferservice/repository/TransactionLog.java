@@ -40,11 +40,11 @@ public class TransactionLog {
         logFilePath = Paths.get(transactionLogFile);
     }
 
-    /**
-     * Записывает транзакцию в файл лога транзакций на диске в режиме добавления
-     *
-     * @param transaction - транзакция
-     */
+
+     // Записывает транзакцию в файл лога транзакций на диске в режиме добавления
+
+     // @param transaction - транзакция
+
     public void writeToLogFile(Transaction transaction) {
         try {
             Files.write(logFilePath, transaction.toString().getBytes(), WRITE, CREATE, APPEND);

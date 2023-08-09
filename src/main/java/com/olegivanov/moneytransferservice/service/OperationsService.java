@@ -12,14 +12,13 @@ import java.math.BigDecimal;
 
 import static com.olegivanov.moneytransferservice.model.AuthorizationStatus.AUTHORIZED;
 
-/**
- * Выполняет операции по переводу денег:
- * - конвертацию запросов, от клиентского приложения в формат запросов требуемый IPSP провайдером,
- * - вызовы необходимых методов IPSP провайдер,
- * - возврат результатов контроллеру,
- * - запись истории в лог транзакций.
- *
- */
+
+// * Выполняет операции по переводу денег:
+// * - конвертацию запросов, от клиентского приложения в формат запросов требуемый IPSP провайдером,
+// * - вызовы необходимых методов IPSP провайдер,
+// * - возврат результатов контроллеру,
+// * - запись истории в лог транзакций.
+
 @Service
 public class OperationsService {
 
@@ -32,12 +31,11 @@ public class OperationsService {
         this.acquiringService = acquiringService;
     }
 
-    /**
-     * Инициирует обработку транзакции перевода денег
-     *
-     * @param reqDTO - DTO клиентского запроса на перевод
-     * @return - DTO успешно инициированной операции в случае успешной инициации
-     */
+
+//     * Инициирует обработку транзакции перевода денег
+//     * @param reqDTO - DTO клиентского запроса на перевод
+//     * @return - DTO успешно инициированной операции в случае успешной инициации
+
     public Response200DTO transfer(TransferRequestDTO reqDTO) {
         //("открываем") транзакцию обработки, пока без таймстемпа, id и со статусом fail
         transaction = new Transaction(reqDTO.getCardFromNumber(), reqDTO.getCardToNumber(),
@@ -80,12 +78,11 @@ public class OperationsService {
         }
     }
 
-    /**
-     * Завершает обработку транзакции перевода денег
-     *
-     * @param reqDTO - DTO запроса клиента на верификацию
-     * @return DTO успешно выполненной операции в случае успешного перевода
-     */
+
+//     * Завершает обработку транзакции перевода денег
+//     * @param reqDTO - DTO запроса клиента на верификацию
+//     * @return DTO успешно выполненной операции в случае успешного перевода
+
     public Response200DTO confirmOperation(ConfirmOperationRequestDTO reqDTO) {
         //проверяем результат верификации проверочного кода
         if (!acquiringService.verifyConfirmationCode(reqDTO.getOperationId(), reqDTO.getCode())) {
