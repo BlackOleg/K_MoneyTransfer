@@ -1,0 +1,16 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "application.profile.dev",
+      "type": "java.lang.String",
+      "description": "Application profile dev(true)\/prod(false)."
+    },
+    {
+      "name": "application.transaction-logfile.name",
+      "type": "java.lang.String",
+      "description": "Description for application.transaction-logfile.name."
+    }
+  ],
+  "hints": []
+}

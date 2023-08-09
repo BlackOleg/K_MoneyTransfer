@@ -1,0 +1,12 @@
+version: "1.0"  # 
+services:
+  restservice:
+    image: "moneytransfer"
+    ports:
+      - "5500:5500"
+  #client:
+  #  image: "/front/frontapp"
+  #  ports:
+  #   - "3000:3000"
+
+
