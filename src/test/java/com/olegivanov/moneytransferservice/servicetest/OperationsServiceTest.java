@@ -6,6 +6,7 @@ import com.olegivanov.moneytransferservice.exceptions.UnauthorizedException;
 import com.olegivanov.moneytransferservice.model.*;
 import com.olegivanov.moneytransferservice.repository.TransactionLog;
 import com.olegivanov.moneytransferservice.service.AcquiringService;
+import com.olegivanov.moneytransferservice.service.LogService;
 import com.olegivanov.moneytransferservice.service.OperationsService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -20,6 +21,7 @@ import static org.mockito.Mockito.*;
 public class OperationsServiceTest {
     static TransferRequestDTO reqDTO;
     static TransactionLog transactionLog;
+    static LogService fileLog;
 
     @BeforeAll
     public static void initSuite() {
@@ -27,6 +29,8 @@ public class OperationsServiceTest {
         //для теста не важна работа метода transactionLog.writeToLogFile, поэтому его заглушим
         transactionLog = Mockito.spy(TransactionLog.class);
         doNothing().when(transactionLog).writeToLogFile(isA(Transaction.class));
+        fileLog = Mockito.spy(LogService.class);
+        doNothing().when(fileLog).writeToLogFile(isA(Transaction.class));
 
         //входной параметр для тестируемого метода
         reqDTO.setCardFromNumber(1111_1111_1111_1111L);
@@ -56,7 +60,7 @@ public class OperationsServiceTest {
         when(ipsp.verifyConfirmationCode(isA(String.class),isA(String.class))).thenReturn(true);
 
         //экземпляр сервиса
-        OperationsService service = new OperationsService(transactionLog, ipsp);
+        OperationsService service = new OperationsService(transactionLog, ipsp, fileLog);
 
         //when:
         Response200DTO respDTO = service.transfer(reqDTO);
@@ -82,7 +86,7 @@ public class OperationsServiceTest {
         when(ipsp.verifyConfirmationCode(isA(String.class),isA(String.class))).thenReturn(true);
 
         //экземпляр сервиса
-        OperationsService service = new OperationsService(transactionLog, ipsp);
+        OperationsService service = new OperationsService(transactionLog, ipsp, fileLog);
 
         //when:
         UnauthorizedException ex = assertThrows(UnauthorizedException.class,()->service.transfer(reqDTO));

@@ -23,11 +23,13 @@ import static com.olegivanov.moneytransferservice.model.AuthorizationStatus.AUTH
 public class OperationsService {
 
     private final TransactionLog transactionLog;
+    private final LogService logService;
     private final AcquiringService acquiringService;
     private Transaction transaction;
 
-    public OperationsService(TransactionLog transactionLog, AcquiringService acquiringService) {
+    public OperationsService(TransactionLog transactionLog, AcquiringService acquiringService, LogService logService) {
         this.transactionLog = transactionLog;
+        this.logService = logService;
         this.acquiringService = acquiringService;
     }
 
