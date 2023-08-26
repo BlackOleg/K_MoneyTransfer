@@ -1,5 +1,6 @@
 package com.olegivanov.moneytransferservice.repository;
 
+import com.olegivanov.moneytransferservice.model.FileLog;
 import com.olegivanov.moneytransferservice.model.Transaction;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import static java.nio.file.StandardOpenOption.*;
 
 /**
- * Хранилище лога транзакций
+ * Хранилище  транзакций
  *
  */
 @Repository
@@ -26,32 +27,33 @@ public class TransactionLog {
 
     //генератор id для генерации идентификатора транзакции в мапе
     private final AtomicLong id = new AtomicLong();
+    private final FileLog fileLog = new FileLog();
 
     //файл для записи лога транзакций на диск читаем из свойств приложения
-    @Value("${application.transaction-logfile.name}")
-    private String transactionLogFile;
-
-    //path для использования в writer
-    private Path logFilePath;
-
-    //инициализируем path после того как конструктор отработал
-    @PostConstruct
-    void init() {
-        logFilePath = Paths.get(transactionLogFile);
-    }
-
-
-     // Записывает транзакцию в файл лога транзакций на диске в режиме добавления
-
-     // @param transaction - транзакция
-
-    public void writeToLogFile(Transaction transaction) {
-        try {
-            Files.write(logFilePath, transaction.toString().getBytes(), WRITE, CREATE, APPEND);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Value("${application.transaction-logfile.name}")
+//    private String transactionLogFile;
+//
+//    //path для использования в writer
+//    private Path logFilePath;
+//
+//    //инициализируем path после того как конструктор отработал
+//    @PostConstruct
+//    void init() {
+//        logFilePath = Paths.get(transactionLogFile);
+//    }
+//
+//
+//     // Записывает транзакцию в файл лога транзакций на диске в режиме добавления
+//
+//     // @param transaction - транзакция
+//
+//    public void writeToLogFile(Transaction transaction) {
+//        try {
+//            Files.write(logFilePath, transaction.toString().getBytes(), WRITE, CREATE, APPEND);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
      /**
      * Записывает транзакцию в лог транзакций в памяти, при этом генерируется id транзакции

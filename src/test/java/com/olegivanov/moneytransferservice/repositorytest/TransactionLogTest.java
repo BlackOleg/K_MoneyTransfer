@@ -1,7 +1,9 @@
 package com.olegivanov.moneytransferservice.repositorytest;
 
+import com.olegivanov.moneytransferservice.model.FileLog;
 import com.olegivanov.moneytransferservice.model.Transaction;
 import com.olegivanov.moneytransferservice.repository.TransactionLog;
+import com.olegivanov.moneytransferservice.service.LogService;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.junit.jupiter.api.*;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -17,10 +19,12 @@ public class TransactionLogTest {
 
     //given
     static TransactionLog transactionLog = new TransactionLog();
+    static LogService logService = new LogService();
+    static FileLog fileLog = new FileLog();
 
     @BeforeAll
     public static void initSuite() {
-        ReflectionTestUtils.setField(transactionLog, "logFilePath", Paths.get(LOG_FILE));
+        ReflectionTestUtils.setField(fileLog, "logFilePath", Paths.get(LOG_FILE));
     }
 
     @Test
@@ -70,7 +74,7 @@ public class TransactionLogTest {
         //when
         Transaction tr = transactionLog.get(2L);
         Files.deleteIfExists(Paths.get(LOG_FILE));
-        transactionLog.writeToLogFile(tr);
+        logService.writeToLogFile(tr);
         String readStr = Files.readAllLines(Paths.get(LOG_FILE))
                 .stream().reduce("", (a, b) -> a + b);
         //then

@@ -21,16 +21,16 @@ import static org.mockito.Mockito.*;
 public class OperationsServiceTest {
     static TransferRequestDTO reqDTO;
     static TransactionLog transactionLog;
-    static LogService fileLog;
+    static LogService logService;
 
     @BeforeAll
     public static void initSuite() {
         reqDTO = new TransferRequestDTO();
         //для теста не важна работа метода transactionLog.writeToLogFile, поэтому его заглушим
         transactionLog = Mockito.spy(TransactionLog.class);
-        doNothing().when(transactionLog).writeToLogFile(isA(Transaction.class));
-        fileLog = Mockito.spy(LogService.class);
-        doNothing().when(fileLog).writeToLogFile(isA(Transaction.class));
+        //doNothing().when(transactionLog).writeToLogFile(isA(Transaction.class));
+        logService = Mockito.spy(LogService.class);
+        doNothing().when(logService).writeToLogFile(isA(Transaction.class));
 
         //входной параметр для тестируемого метода
         reqDTO.setCardFromNumber(1111_1111_1111_1111L);
@@ -60,7 +60,7 @@ public class OperationsServiceTest {
         when(ipsp.verifyConfirmationCode(isA(String.class),isA(String.class))).thenReturn(true);
 
         //экземпляр сервиса
-        OperationsService service = new OperationsService(transactionLog, ipsp, fileLog);
+        OperationsService service = new OperationsService(transactionLog, ipsp, logService);
 
         //when:
         Response200DTO respDTO = service.transfer(reqDTO);
@@ -86,7 +86,7 @@ public class OperationsServiceTest {
         when(ipsp.verifyConfirmationCode(isA(String.class),isA(String.class))).thenReturn(true);
 
         //экземпляр сервиса
-        OperationsService service = new OperationsService(transactionLog, ipsp, fileLog);
+        OperationsService service = new OperationsService(transactionLog, ipsp, logService);
 
         //when:
         UnauthorizedException ex = assertThrows(UnauthorizedException.class,()->service.transfer(reqDTO));

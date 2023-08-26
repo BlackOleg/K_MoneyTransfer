@@ -1,6 +1,8 @@
 package com.olegivanov.moneytransferservice.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.annotation.PostConstruct;
@@ -11,6 +13,8 @@ import java.nio.file.Paths;
 
 import static java.nio.file.StandardOpenOption.*;
 @Getter
+@Setter
+@NoArgsConstructor
 public class FileLog {
     //файл для записи лога транзакций на диск читаем из свойств приложения
     @Value("${application.transaction-logfile.name}")

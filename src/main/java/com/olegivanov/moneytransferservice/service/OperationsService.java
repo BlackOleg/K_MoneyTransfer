@@ -29,8 +29,8 @@ public class OperationsService {
 
     public OperationsService(TransactionLog transactionLog, AcquiringService acquiringService, LogService logService) {
         this.transactionLog = transactionLog;
-        this.logService = logService;
         this.acquiringService = acquiringService;
+        this.logService = logService;
     }
 
 
@@ -58,7 +58,7 @@ public class OperationsService {
         //разбираем результат возвращенный сервисом IPSP:
         if (authStatus != AUTHORIZED) {
             //пишем в логфайл как failed
-            transactionLog.writeToLogFile(transaction);
+            logService.writeToLogFile(transaction);
 
             //разбираем какой эксепшон выкинуть - определяет, что отобразится клиенту
             switch (authStatus) {
@@ -89,7 +89,7 @@ public class OperationsService {
         //проверяем результат верификации проверочного кода
         if (!acquiringService.verifyConfirmationCode(reqDTO.getOperationId(), reqDTO.getCode())) {
             //пишем ее в файл лога транзакций как failed
-            transactionLog.writeToLogFile(transaction);
+            logService.writeToLogFile(transaction);
             throw new UnauthorizedException("Неверный проверочный код.");
         }
 
@@ -97,7 +97,7 @@ public class OperationsService {
         transactionLog.update(transaction.getOperationId(), transaction.setSuccess());
 
         //пишем ее в файл лога транзакций как success
-        transactionLog.writeToLogFile(transaction);
+        logService.writeToLogFile(transaction);
 
         /* Предоставленный в условии задания FRONT, никак не отображает полученный проверочный код,
          * для выполнения требований спецификации OpenApi нашего сервиса, просто возвращаем,

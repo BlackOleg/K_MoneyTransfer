@@ -1,32 +1,160 @@
-2023-08-10 01:33:48.419  INFO 27240 --- [main] c.o.m.MoneyTransferServiceApplication    : Starting MoneyTransferServiceApplication using Java 17.0.6 on OptimusPrime1 with PID 27240 (C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes started by Black in C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service)
-2023-08-10 01:33:48.426  INFO 27240 --- [main] c.o.m.MoneyTransferServiceApplication    : No active profile set, falling back to 1 default profile: "default"
-2023-08-10 01:33:49.610  INFO 27240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5500 (http)
-2023-08-10 01:33:49.620  INFO 27240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-10 01:33:49.620  INFO 27240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2023-08-10 01:33:49.725  INFO 27240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-10 01:33:49.725  INFO 27240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1226 ms
-2023-08-10 01:33:49.962  WARN 27240 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2023-08-23 00:34:15.965  INFO 13296 --- [main] c.o.m.MoneyTransferServiceApplication    : Starting MoneyTransferServiceApplication using Java 17.0.6 on OptimusPrime1 with PID 13296 (C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes started by Black in C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service)
+2023-08-23 00:34:15.974  INFO 13296 --- [main] c.o.m.MoneyTransferServiceApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-08-23 00:34:17.056  INFO 13296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5500 (http)
+2023-08-23 00:34:17.067  INFO 13296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23 00:34:17.068  INFO 13296 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-23 00:34:17.174  INFO 13296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23 00:34:17.174  INFO 13296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1129 ms
+2023-08-23 00:34:17.366  WARN 13296 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: f9fb7f9f-b6f4-45bb-913f-efb463d02f37
+Using generated security password: 4d2fe0fc-d4c3-41aa-afa1-e8dfcd185128
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2023-08-10 01:33:50.060  INFO 27240 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
-2023-08-10 01:33:50.347  INFO 27240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5500 (http) with context path ''
-2023-08-10 01:33:50.359  INFO 27240 --- [main] c.o.m.MoneyTransferServiceApplication    : Started MoneyTransferServiceApplication in 2.437 seconds (JVM running for 3.931)
-2023-08-10 01:34:55.975  INFO 27240 --- [http-nio-5500-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-10 01:34:55.976  INFO 27240 --- [http-nio-5500-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-08-10 01:34:55.977  INFO 27240 --- [http-nio-5500-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-08-10 01:35:06.243  WARN 27240 --- [http-nio-5500-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2023-08-10 01:37:19.813  INFO 27240 --- [http-nio-5500-exec-9] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1212121212121212, cardToNumber=2323232323232323, cardFromCVV=000, cardFromValidTill=12/34, amount=TransferRequestDTO.AmountDto(currency=RUR, value=1234567800))]
-2023-08-10 01:37:19.856  INFO 27240 --- [http-nio-5500-exec-9] c.o.m.aspect.LogAspect                   : Called handleUnauthorized: Optional[com.olegivanov.moneytransferservice.exceptions.UnauthorizedException: Отказ. Недостаточно средств.]
-2023-08-10 01:37:19.857  INFO 27240 --- [http-nio-5500-exec-9] c.o.m.aspect.LogAspect                   : Returned handleUnauthorized: ResponseErrDTO(message=Отказ. Недостаточно средств., id=1)
-2023-08-10 01:37:28.789  INFO 27240 --- [http-nio-5500-exec-10] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1212121212121212, cardToNumber=2323232323232323, cardFromCVV=000, cardFromValidTill=12/34, amount=TransferRequestDTO.AmountDto(currency=RUR, value=100000))]
-2023-08-10 01:37:28.790  INFO 27240 --- [http-nio-5500-exec-10] c.o.m.aspect.LogAspect                   : Returned transfer: Response200DTO(operationId=2, code=null)
-2023-08-10 01:37:28.819  INFO 27240 --- [http-nio-5500-exec-1] c.o.m.aspect.LogAspect                   : Called confirmOperation: Optional[ConfirmOperationRequestDTO(operationId=2, code=0000)]
-2023-08-10 01:37:28.822  INFO 27240 --- [http-nio-5500-exec-1] c.o.m.aspect.LogAspect                   : Called handleUnauthorized: Optional[com.olegivanov.moneytransferservice.exceptions.UnauthorizedException: Неверный проверочный код.]
-2023-08-10 01:37:28.822  INFO 27240 --- [http-nio-5500-exec-1] c.o.m.aspect.LogAspect                   : Returned handleUnauthorized: ResponseErrDTO(message=Неверный проверочный код., id=1)
-2023-08-10 01:37:38.306  INFO 27240 --- [http-nio-5500-exec-4] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1212121212121212, cardToNumber=2323232323232323, cardFromCVV=123, cardFromValidTill=12/34, amount=TransferRequestDTO.AmountDto(currency=RUR, value=100000))]
-2023-08-10 01:37:38.308  INFO 27240 --- [http-nio-5500-exec-4] c.o.m.aspect.LogAspect                   : Returned transfer: Response200DTO(operationId=3, code=null)
-2023-08-10 01:37:38.320  INFO 27240 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Called confirmOperation: Optional[ConfirmOperationRequestDTO(operationId=3, code=0000)]
-2023-08-10 01:37:38.322  INFO 27240 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Returned confirmOperation: Response200DTO(operationId=3, code=0000)
+2023-08-23 00:34:17.445  INFO 13296 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-23 00:34:17.712  INFO 13296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5500 (http) with context path ''
+2023-08-23 00:34:17.722  INFO 13296 --- [main] c.o.m.MoneyTransferServiceApplication    : Started MoneyTransferServiceApplication in 2.252 seconds (JVM running for 3.141)
+2023-08-23 00:36:38.720  INFO 13296 --- [http-nio-5500-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 00:36:38.721  INFO 13296 --- [http-nio-5500-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23 00:36:38.722  INFO 13296 --- [http-nio-5500-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-23 00:36:38.865  INFO 13296 --- [http-nio-5500-exec-5] c.o.m.aspect.LogAspect                   : Called handleInternalServerError: Optional[org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Numeric value (50000000000) out of range of int (-2147483648 - 2147483647); nested exception is com.fasterxml.jackson.databind.JsonMappingException: Numeric value (50000000000) out of range of int (-2147483648 - 2147483647)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 166] (through reference chain: com.olegivanov.moneytransferservice.dto.TransferRequestDTO["amount"]->com.olegivanov.moneytransferservice.dto.TransferRequestDTO$AmountDto["value"])]
+2023-08-23 00:36:38.867  INFO 13296 --- [http-nio-5500-exec-5] c.o.m.aspect.LogAspect                   : Returned handleInternalServerError: ResponseErrDTO(message=Внутренняя ошибка сервера, id=2)
+2023-08-23 00:36:49.824  INFO 13296 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1321213131321213, cardToNumber=5656565656565565, cardFromCVV=000, cardFromValidTill=12/23, amount=TransferRequestDTO.AmountDto(currency=RUR, value=5000000))]
+2023-08-23 00:36:49.847  INFO 13296 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Called handleUnauthorized: Optional[com.olegivanov.moneytransferservice.exceptions.UnauthorizedException: Отказ. Недостаточно средств.]
+2023-08-23 00:36:49.848  INFO 13296 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Returned handleUnauthorized: ResponseErrDTO(message=Отказ. Недостаточно средств., id=1)
+2023-08-23 00:36:59.213  INFO 13296 --- [http-nio-5500-exec-4] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1321213131321213, cardToNumber=5656565656565565, cardFromCVV=000, cardFromValidTill=12/23, amount=TransferRequestDTO.AmountDto(currency=RUR, value=1000000))]
+2023-08-23 00:36:59.216  INFO 13296 --- [http-nio-5500-exec-4] c.o.m.aspect.LogAspect                   : Called handleUnauthorized: Optional[com.olegivanov.moneytransferservice.exceptions.UnauthorizedException: Отказ. Недостаточно средств.]
+2023-08-23 00:36:59.217  INFO 13296 --- [http-nio-5500-exec-4] c.o.m.aspect.LogAspect                   : Returned handleUnauthorized: ResponseErrDTO(message=Отказ. Недостаточно средств., id=1)
+2023-08-23 00:37:05.583  INFO 13296 --- [http-nio-5500-exec-2] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1321213131321213, cardToNumber=5656565656565565, cardFromCVV=000, cardFromValidTill=12/23, amount=TransferRequestDTO.AmountDto(currency=RUR, value=100000))]
+2023-08-23 00:37:05.585  INFO 13296 --- [http-nio-5500-exec-2] c.o.m.aspect.LogAspect                   : Returned transfer: Response200DTO(operationId=3, code=null)
+2023-08-23 00:37:05.603  INFO 13296 --- [http-nio-5500-exec-7] c.o.m.aspect.LogAspect                   : Called confirmOperation: Optional[ConfirmOperationRequestDTO(operationId=3, code=0000)]
+2023-08-23 00:37:05.605  INFO 13296 --- [http-nio-5500-exec-7] c.o.m.aspect.LogAspect                   : Returned confirmOperation: Response200DTO(operationId=3, code=0000)
+2023-08-23 00:42:04.976  INFO 30588 --- [main] c.o.m.MoneyTransferServiceApplication    : Starting MoneyTransferServiceApplication using Java 17.0.6 on OptimusPrime1 with PID 30588 (C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes started by Black in C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service)
+2023-08-23 00:42:04.980  INFO 30588 --- [main] c.o.m.MoneyTransferServiceApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-08-23 00:42:05.909  INFO 30588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5500 (http)
+2023-08-23 00:42:05.918  INFO 30588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23 00:42:05.918  INFO 30588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-23 00:42:06.019  INFO 30588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23 00:42:06.019  INFO 30588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 961 ms
+2023-08-23 00:42:06.193  WARN 30588 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9e398349-4abf-4951-8256-2c8d930771e0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-08-23 00:42:06.255  INFO 30588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2023-08-23 00:42:06.488  INFO 30588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5500 (http) with context path ''
+2023-08-23 00:42:06.497  INFO 30588 --- [main] c.o.m.MoneyTransferServiceApplication    : Started MoneyTransferServiceApplication in 1.913 seconds (JVM running for 2.613)
+2023-08-23 00:42:42.630  INFO 30588 --- [http-nio-5500-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 00:42:42.630  INFO 30588 --- [http-nio-5500-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23 00:42:42.631  INFO 30588 --- [http-nio-5500-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-23 00:42:42.749  INFO 30588 --- [http-nio-5500-exec-1] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=7899987897987979, cardToNumber=8888888888888888, cardFromCVV=000, cardFromValidTill=01/24, amount=TransferRequestDTO.AmountDto(currency=RUR, value=500000))]
+2023-08-23 00:42:42.762  INFO 30588 --- [http-nio-5500-exec-1] c.o.m.aspect.LogAspect                   : Returned transfer: Response200DTO(operationId=1, code=null)
+2023-08-23 00:42:42.795  INFO 30588 --- [http-nio-5500-exec-2] c.o.m.aspect.LogAspect                   : Called confirmOperation: Optional[ConfirmOperationRequestDTO(operationId=1, code=0000)]
+2023-08-23 00:42:42.799  INFO 30588 --- [http-nio-5500-exec-2] c.o.m.aspect.LogAspect                   : Called handleInternalServerError: Optional[java.lang.NullPointerException: Cannot invoke "com.olegivanov.moneytransferservice.model.FileLog.getLogFilePath()" because "this.log" is null]
+2023-08-23 00:42:42.800  INFO 30588 --- [http-nio-5500-exec-2] c.o.m.aspect.LogAspect                   : Returned handleInternalServerError: ResponseErrDTO(message=Внутренняя ошибка сервера, id=2)
+2023-08-23 00:42:48.879  INFO 30588 --- [http-nio-5500-exec-7] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=7899987897987979, cardToNumber=8888888888888888, cardFromCVV=000, cardFromValidTill=01/24, amount=TransferRequestDTO.AmountDto(currency=RUR, value=100000))]
+2023-08-23 00:42:48.880  INFO 30588 --- [http-nio-5500-exec-7] c.o.m.aspect.LogAspect                   : Returned transfer: Response200DTO(operationId=2, code=null)
+2023-08-23 00:42:48.891  INFO 30588 --- [http-nio-5500-exec-10] c.o.m.aspect.LogAspect                   : Called confirmOperation: Optional[ConfirmOperationRequestDTO(operationId=2, code=0000)]
+2023-08-23 00:42:48.891  INFO 30588 --- [http-nio-5500-exec-10] c.o.m.aspect.LogAspect                   : Called handleInternalServerError: Optional[java.lang.NullPointerException: Cannot invoke "com.olegivanov.moneytransferservice.model.FileLog.getLogFilePath()" because "this.log" is null]
+2023-08-23 00:42:48.891  INFO 30588 --- [http-nio-5500-exec-10] c.o.m.aspect.LogAspect                   : Returned handleInternalServerError: ResponseErrDTO(message=Внутренняя ошибка сервера, id=2)
+2023-08-23 00:43:01.640  INFO 30588 --- [http-nio-5500-exec-5] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=7899987897987979, cardToNumber=9765465464654646, cardFromCVV=000, cardFromValidTill=01/24, amount=TransferRequestDTO.AmountDto(currency=RUR, value=100000))]
+2023-08-23 00:43:01.641  INFO 30588 --- [http-nio-5500-exec-5] c.o.m.aspect.LogAspect                   : Returned transfer: Response200DTO(operationId=3, code=null)
+2023-08-23 00:43:01.650  INFO 30588 --- [http-nio-5500-exec-6] c.o.m.aspect.LogAspect                   : Called confirmOperation: Optional[ConfirmOperationRequestDTO(operationId=3, code=0000)]
+2023-08-23 00:43:01.650  INFO 30588 --- [http-nio-5500-exec-6] c.o.m.aspect.LogAspect                   : Called handleInternalServerError: Optional[java.lang.NullPointerException: Cannot invoke "com.olegivanov.moneytransferservice.model.FileLog.getLogFilePath()" because "this.log" is null]
+2023-08-23 00:43:01.651  INFO 30588 --- [http-nio-5500-exec-6] c.o.m.aspect.LogAspect                   : Returned handleInternalServerError: ResponseErrDTO(message=Внутренняя ошибка сервера, id=2)
+2023-08-23 00:43:35.656  INFO 30588 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1897987979223211, cardToNumber=1213464197479877, cardFromCVV=000, cardFromValidTill=12/23, amount=TransferRequestDTO.AmountDto(currency=RUR, value=4000000))]
+2023-08-23 00:43:35.657  INFO 30588 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Called handleInternalServerError: Optional[java.lang.NullPointerException: Cannot invoke "com.olegivanov.moneytransferservice.model.FileLog.getLogFilePath()" because "this.log" is null]
+2023-08-23 00:43:35.658  INFO 30588 --- [http-nio-5500-exec-3] c.o.m.aspect.LogAspect                   : Returned handleInternalServerError: ResponseErrDTO(message=Внутренняя ошибка сервера, id=2)
+2023-08-23 00:43:46.725  INFO 30588 --- [http-nio-5500-exec-8] c.o.m.aspect.LogAspect                   : Called transfer: Optional[TransferRequestDTO(cardFromNumber=1897987979223211, cardToNumber=1213464197479877, cardFromCVV=000, cardFromValidTill=12/23, amount=TransferRequestDTO.AmountDto(currency=RUR, value=1000000))]
+2023-08-23 00:43:46.726  INFO 30588 --- [http-nio-5500-exec-8] c.o.m.aspect.LogAspect                   : Called handleInternalServerError: Optional[java.lang.NullPointerException: Cannot invoke "com.olegivanov.moneytransferservice.model.FileLog.getLogFilePath()" because "this.log" is null]
+2023-08-23 00:43:46.727  INFO 30588 --- [http-nio-5500-exec-8] c.o.m.aspect.LogAspect                   : Returned handleInternalServerError: ResponseErrDTO(message=Внутренняя ошибка сервера, id=2)
+2023-08-23 01:27:59.265  INFO 23884 --- [main] c.o.m.MoneyTransferServiceApplication    : Starting MoneyTransferServiceApplication using Java 17.0.6 on OptimusPrime1 with PID 23884 (C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes started by Black in C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service)
+2023-08-23 01:27:59.268  INFO 23884 --- [main] c.o.m.MoneyTransferServiceApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-08-23 01:28:00.324  INFO 23884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5500 (http)
+2023-08-23 01:28:00.335  INFO 23884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23 01:28:00.336  INFO 23884 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2023-08-23 01:28:00.454  INFO 23884 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23 01:28:00.454  INFO 23884 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1127 ms
+2023-08-23 01:28:00.606  WARN 23884 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationsController' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\controller\OperationsController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationsService' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\service\OperationsService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionLog' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\repository\TransactionLog.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.olegivanov.moneytransferservice.repository.TransactionLog]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2023-08-23 01:28:00.610  INFO 23884 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23 01:28:00.624  INFO 23884 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-23 01:28:00.647 ERROR 23884 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationsController' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\controller\OperationsController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationsService' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\service\OperationsService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionLog' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\repository\TransactionLog.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.olegivanov.moneytransferservice.repository.TransactionLog]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.17.jar:5.3.17]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.17.jar:5.3.17]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.5.jar:2.6.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.5.jar:2.6.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.5.jar:2.6.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.5.jar:2.6.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.5.jar:2.6.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.5.jar:2.6.5]
+	at com.olegivanov.moneytransferservice.MoneyTransferServiceApplication.main(MoneyTransferServiceApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'operationsService' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\service\OperationsService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionLog' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\repository\TransactionLog.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.olegivanov.moneytransferservice.repository.TransactionLog]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.17.jar:5.3.17]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionLog' defined in file [C:\Black\Netology\JD\Projects\Diploma6_Money_transfer_service\target\classes\com\olegivanov\moneytransferservice\repository\TransactionLog.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.olegivanov.moneytransferservice.repository.TransactionLog]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.17.jar:5.3.17]
+	... 33 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.olegivanov.moneytransferservice.repository.TransactionLog]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.3.17.jar:5.3.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326) ~[spring-beans-5.3.17.jar:5.3.17]
+	... 45 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:216) ~[na:na]
+	at java.base/java.nio.file.Path.of(Path.java:147) ~[na:na]
+	at java.base/java.nio.file.Paths.get(Paths.java:69) ~[na:na]
+	at com.olegivanov.moneytransferservice.model.FileLog.init(FileLog.java:28) ~[classes/:na]
+	at com.olegivanov.moneytransferservice.model.FileLog.<init>(FileLog.java:22) ~[classes/:na]
+	at com.olegivanov.moneytransferservice.repository.TransactionLog.<init>(TransactionLog.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.17.jar:5.3.17]
+	... 47 common frames omitted
+
